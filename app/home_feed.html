@@ -1,0 +1,33 @@
+<ons-page class="center">
+    <div ng-controller="MasterController">
+        <ons-list>
+            <ons-list-item ng-repeat="item in items">
+            
+                <ons-row>
+                    <ons-col size="10" class="right">
+                        <ons-row>
+                            <img src="images/{{item.author_avatar}}" id="author_gzy">
+                        </ons-row>
+                        <ons-row id="gzy_liked">
+                            <ons-icon icon="{{item.icon}}" fixed-width="true"></ons-icon>
+                        </ons-row>
+                        <ons-row id="gzy_commented">
+                            <ons-icon icon="{{item.icon}}" fixed-width="true"></ons-icon>
+                        </ons-row>
+                    </ons-col>
+                    <ons-col size="100" class="left">
+                        <ons-row>
+                        <img src="images/{{item.image}}" id="gzy" alt="{{item.title}}" ng-click="showDetail($index)">
+                        </ons-row>
+                        <ons-row>
+                            <p>Lorem ipso dolor site amet, consectetur adipiscing elit.Vivamus massa erat, scelerisque at est sed, facilisis sollicitudin mi. Nam et amet</p>
+                        </ons-row>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+        </ons-list>
+    </div>
+    <script>
+        Draggable.create("#gzy", {type:"scrollLeft", throwProps:false, edgeResistance:0.5});
+    </script>
+</ons-page>
